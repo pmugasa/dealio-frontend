@@ -1,0 +1,108 @@
+{
+  "deals": [
+    {
+      "id": "1",
+      "title": "Fine Dining Experience",
+      "price": "50",
+      "description": "Enjoy a luxurious five-course meal with wine pairing at one of Harare's top-rated restaurants.",
+      "image": "https://www.freepik.com/free-photo/double-hamburger-isolated-white-background-fresh-burger-fast-food-with-beef-cream-cheese_39518159.htm#query=food&position=0&from_view=search&track=sph",
+      "location": "Harare",
+      "discount": "30",
+      "terms": "Valid for dine-in only. Not valid with other offers or discounts. Reservation required.",
+      "quantity": "50",
+      "restaurantName": "Le Bistro",
+      "restaurantSurburb": "Avondale"
+    },
+    {
+      "id": "2",
+      "title": "Spa Day Package",
+      "price": "80",
+      "description": "Pamper yourself with a full day of spa treatments, including massage, facial, and manicure.",
+      "image": "https://example.com/images/deal2.jpg",
+      "location": "Harare",
+      "discount": "40",
+      "terms": "Valid for weekdays only. Not valid with other offers or discounts. Appointment required.",
+      "quantity": "30",
+      "restaurantName": "The Spa at Meikles Hotel",
+      "restaurantSurburb": "CBD"
+    },
+    {
+      "id": "3",
+      "title": "Golf Lesson Package",
+      "price": "60",
+      "description": "Improve your golf skills with a private lesson from a professional golf instructor.",
+      "image": "https://example.com/images/deal3.jpg",
+      "location": "Harare",
+      "discount": "20",
+      "terms": "Valid for new customers only. Not valid with other offers or discounts. Appointment required.",
+      "quantity": "20",
+      "restaurantName": "Royal Harare Golf Club",
+      "restaurantSurburb": "Borrowdale"
+    },
+    {
+      "id": "6",
+      "title": "Steakhouse Dinner for Two",
+      "price": 35,
+      "description": "Enjoy a steakhouse dinner for two at our award-winning restaurant. Choose from our delicious selection of steaks, sides, and desserts.",
+      "image": "https://www.example.com/images/steakhouse-dinner.jpg",
+      "location": "Harare",
+      "discount": 50,
+      "terms_and_conditions": "Valid for dine-in only. Not valid with other promotions or discounts.",
+      "quantity_available": 10,
+      "restaurantName": "The Grill House",
+      "restaurantSurburb": "Borrowdale"
+    },
+    {
+      "id": "7",
+      "title": "Sushi Platter and Sake",
+      "price": 25,
+      "description": "Treat yourself to our delicious sushi platter and a bottle of sake. Perfect for a night out with friends!",
+      "image": "https://www.example.com/images/sushi-platter.jpg",
+      "location": "Harare",
+      "discount": 40,
+      "terms_and_conditions": "Valid for dine-in only. Must be 18 years or older to purchase. Not valid with other promotions or discounts.",
+      "quantity_available": 15,
+      "restaurantName": "Sushi Zen",
+      "restaurantSurburb": "Avondale"
+    },
+    {
+      "id": "8",
+      "title": "Italian Cooking Class",
+      "price": 30,
+      "description": "Join us for a fun and interactive Italian cooking class. Learn how to make delicious pasta and sauces from scratch!",
+      "image": "https://www.example.com/images/italian-cooking-class.jpg",
+      "location": "Harare",
+      "discount": 25,
+      "terms_and_conditions": "Valid for one cooking class session. Must be 18 years or older to participate. Not valid with other promotions or discounts.",
+      "quantity_available": 20,
+      "restaurantName": "Mamma Mia",
+      "restaurantSurburb": "Greendale"
+    },
+    {
+      "id": "9",
+      "title": "Family Pizza Night",
+      "price": 20,
+      "description": "Get two large pizzas and a pitcher of soda for a fun family pizza night. Choose from our delicious selection of toppings!",
+      "image": "src/assets/pexels-robin-stickel-70497.jpg",
+      "location": "Harare",
+      "discount": 30,
+      "terms_and_conditions": "Valid for dine-in or takeout. Not valid with other promotions or discounts.",
+      "quantity_available": 25,
+      "restaurantName": "Pizza Place",
+      "restaurantSurburb": "Avenues"
+    },
+    {
+      "id": "10",
+      "title": "Bottomless Brunch",
+      "price": 15,
+      "description": "Enjoy a delicious brunch with bottomless mimosas or bloody marys. Perfect for a lazy Sunday morning!",
+      "image": "src/assets/pexels-sebastian-coman-photography-3659862.jpg",
+      "location": "Harare",
+      "discount": 20,
+      "terms_and_conditions": "Valid for dine-in only. Must be 18 years or older to purchase. Not valid with other promotions or discounts.",
+      "quantity_available": 30,
+      "restaurantName": "Cafe Mimosa",
+      "restaurantSurburb": "Newlands"
+    }
+  ]
+}

@@ -3,7 +3,9 @@ import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <Home />
+      <div className="bg-50">
+        <Home />
+      </div>
     </>
   );
 }
