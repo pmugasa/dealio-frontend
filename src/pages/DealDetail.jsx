@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-function DealDetail({ deals }) {
+function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
+  const [disabled, setDisabled] = useState(false);
   const id = useParams().id;
   const deal = deals.find((deal) => deal.id === id);
   const navigate = useNavigate();
+
+  function addToWishList() {
+    setWishlist((prevWish) => [...prevWish, deal]);
+    setDisabled(true);
+  }
 
   return (
     <>
@@ -46,11 +53,21 @@ function DealDetail({ deals }) {
               </p>
             </div>
             <div className="flex space-x-4 my-4 ">
-              <button className="btn btn-primary gap-2  ">
+              <button
+                className="btn btn-primary gap-2  "
+                onClick={() => {
+                  setCart([...cart, deal]);
+                }}
+              >
                 Add to cart
                 <ion-icon name="cart-outline"></ion-icon>
               </button>
-              <button className="btn btn-outline btn-primary gap-2 ">
+
+              <button
+                className="btn btn-outline btn-primary gap-2 "
+                disabled={disabled}
+                onClick={() => addToWishList(deal.id)}
+              >
                 Add to wishlist
                 <ion-icon name="heart-outline"></ion-icon>
               </button>

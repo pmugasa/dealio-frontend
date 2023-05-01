@@ -5,20 +5,36 @@ import { useState } from "react";
 import data from "./data/db.json";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
 function App() {
   const [deals, setDeals] = useState(data.deals);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
+  const user = undefined;
   return (
     <>
-      <Navbar />
-      <div className="bg-50">
-        <Router>
+      <Router>
+        <Navbar cart={cart} user={user} />
+        <div className="bg-5 mx-auto">
           <Routes>
             <Route path="/" element={<Home deals={deals} />} />
-            <Route path="/deals/:id" element={<DealDetail deals={deals} />} />
+            <Route
+              path="/deals/:id"
+              element={
+                <DealDetail
+                  deals={deals}
+                  cart={cart}
+                  setCart={setCart}
+                  wishlist={wishlist}
+                  setWishlist={setWishlist}
+                />
+              }
+            />
+            <Route path="/login" element={<Login />} />
           </Routes>
-        </Router>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </Router>
     </>
   );
 }
