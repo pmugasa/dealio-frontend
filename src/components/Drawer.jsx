@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+
 function Drawer({ isOpen, children, onClose }) {
   const drawerRef = useRef(null);
 
@@ -34,7 +35,7 @@ function Drawer({ isOpen, children, onClose }) {
       >
         <div className="p-6">{children}</div>
         <img
-          src="./assets/icon-close-menu.svg"
+          src=""
           className="absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700"
           onClick={onClose}
         />

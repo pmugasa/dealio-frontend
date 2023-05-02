@@ -6,15 +6,21 @@ import data from "./data/db.json";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Account from "./pages/Account";
+import Drawer from "./components/Drawer";
+
 function App() {
   const [deals, setDeals] = useState(data.deals);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-  const user = undefined;
+  const [isOpen, setIsOpen] = useState(false);
+  const user = "pete";
+
   return (
     <>
       <Router>
-        <Navbar cart={cart} user={user} />
+        <Navbar cart={cart} user={user} isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="bg-5 mx-auto">
           <Routes>
             <Route path="/" element={<Home deals={deals} />} />
@@ -31,6 +37,8 @@ function App() {
               }
             />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </div>
         <Footer />
