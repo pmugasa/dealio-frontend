@@ -20,7 +20,13 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar cart={cart} user={user} isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Navbar
+          cart={cart}
+          user={user}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          setCart={setCart}
+        />
         <div className="bg-5 mx-auto">
           <Routes>
             <Route path="/" element={<Home deals={deals} />} />

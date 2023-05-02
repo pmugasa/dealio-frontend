@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 
-function Navbar({ cart }) {
-  console.log(cart);
+function Navbar({ cart, setCart }) {
   const [showCart, setShowCart] = useState(false);
 
   const handleBtnHover = () => {
@@ -12,6 +11,17 @@ function Navbar({ cart }) {
   const handleContainerLeave = () => {
     setShowCart(false);
   };
+
+  //calculate number of items in the cart
+
+  function totalItemsInCart(array) {
+    return array.reduce((accumulator, item) => {
+      return accumulator + item.quantity;
+    }, 0);
+  }
+
+  const itemsInCart = totalItemsInCart(cart);
+  console.log(cart);
 
   return (
     <>
@@ -26,7 +36,7 @@ function Navbar({ cart }) {
               onMouseEnter={handleBtnHover}
             >
               <span className=" badge badge-primary badge-sm indicator-item">
-                {cart.length}
+                {itemsInCart}
               </span>
               <ion-icon name="cart-outline"></ion-icon>
             </button>
@@ -34,6 +44,7 @@ function Navbar({ cart }) {
               <Dropdown
                 handleContainerLeave={handleContainerLeave}
                 cart={cart}
+                setCart={setCart}
               />
             ) : null}
 

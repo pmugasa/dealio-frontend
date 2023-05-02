@@ -12,6 +12,19 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
     setDisabled(true);
   }
 
+  //add to cart
+  function addToCart(id) {
+    const existingItem = cart.find((item) => item.id === id);
+    if (existingItem) {
+      return [
+        ...cart,
+        { ...existingItem, quantity: (existingItem.quantity += 1) },
+      ];
+    } else {
+      setCart([...cart, deal]);
+    }
+  }
+
   return (
     <>
       <main className="mt-6 md:max-w-screen-lg md:mx-auto  md:h-screen ">
@@ -56,7 +69,7 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
               <button
                 className="btn btn-primary gap-2  "
                 onClick={() => {
-                  setCart([...cart, deal]);
+                  addToCart(deal.id);
                 }}
               >
                 Add to cart
