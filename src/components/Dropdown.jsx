@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Dropdown({ handleContainerLeave, cart, setCart }) {
   function removeItem(id) {
     const updatedCart = cart.filter((item) => item.id !== id);
@@ -13,6 +14,8 @@ function Dropdown({ handleContainerLeave, cart, setCart }) {
     });
     setCart(updatedCart);
   }
+
+  //decreasing the number of items per deal
   function decreaseQuantity(id) {
     const updatedCart = cart.map((item) => {
       if (item.id === id) {
@@ -64,7 +67,12 @@ function Dropdown({ handleContainerLeave, cart, setCart }) {
                   </div>
                 </div>
                 <div className="mx-auto font-semibold flex items-center space-x-2">
-                  <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                  <button
+                    onClick={() => decreaseQuantity(item.id)}
+                    disabled={item.quantity === 1 ? true : false}
+                  >
+                    -
+                  </button>
                   <p>{item.quantity}</p>
                   <button onClick={() => increaseQuantity(item.id)}>+</button>
                 </div>
@@ -80,9 +88,12 @@ function Dropdown({ handleContainerLeave, cart, setCart }) {
           <p className="">${subTotal}</p>
         </div>
 
-        <button className="px-4 py-2 mt-4 text-sm font-bold bg-primary rounded-md">
+        <Link
+          to="/checkout"
+          className="px-4 py-2 mt-4 text-sm font-bold bg-primary rounded-md text-center hover:bg-green-500 hover:text-white"
+        >
           Proceed to checkout
-        </button>
+        </Link>
       </div>
     </>
   );

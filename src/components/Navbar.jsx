@@ -21,7 +21,6 @@ function Navbar({ cart, setCart }) {
   }
 
   const itemsInCart = totalItemsInCart(cart);
-  console.log(cart);
 
   return (
     <>

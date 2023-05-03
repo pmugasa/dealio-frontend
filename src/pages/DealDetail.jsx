@@ -18,10 +18,14 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
     if (existingItem) {
       return [
         ...cart,
-        { ...existingItem, quantity: (existingItem.quantity += 1) },
+        {
+          ...existingItem,
+          quantity: (existingItem.quantity += 1),
+        },
       ];
     } else {
       setCart([...cart, deal]);
+      alert("Item added successfully 😃");
     }
   }
 

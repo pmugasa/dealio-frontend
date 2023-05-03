@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Account from "./pages/Account";
-import Drawer from "./components/Drawer";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [deals, setDeals] = useState(data.deals);
@@ -45,6 +45,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/checkout" element={<Checkout cart={cart} />} />
           </Routes>
         </div>
         <Footer />

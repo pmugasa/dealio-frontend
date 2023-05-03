@@ -31,9 +31,9 @@ function Login() {
                     placeholder="email"
                     className="input input-bordered"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
+
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Password</span>
