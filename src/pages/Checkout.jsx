@@ -1,15 +1,7 @@
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Checkout({ cart }) {
-  const [billingInfo, setBillingInfo] = useState({
-    email: "",
-    country: "",
-    firstName: "",
-    lastName: "",
-    address: "",
-    city: "",
-    phone: "",
-  });
+function Checkout({ setBillingInfo, billingInfo }) {
+  const navigate = useNavigate();
 
   //input changes
   function handleChange(e) {
@@ -23,15 +15,12 @@ function Checkout({ cart }) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(billingInfo);
-    setBillingInfo((prevInfo) => ({
-      ...prevInfo,
-      [e.target.name]: "",
-    }));
+    navigate("/payment");
   }
 
   return (
     <>
-      <main className="mt-8  p-4 max-w-screen-lg  mx-auto md:max-w-screen-md md:max-h-screen md:mx-auto sm:max-w-screen-sm sm:mx-auto ">
+      <main className="mt-8  p-4 max-w-screen-lg  mx-auto md:max-w-screen-md  md:mx-auto sm:max-w-screen-sm sm:mx-auto ">
         <div className="flex font-bold text-primary p-4">
           <div className="">Show order summary</div>
           <p className="ml-auto ">$300</p>
@@ -62,7 +51,7 @@ function Checkout({ cart }) {
               className="input input-bordered w-full"
             />
           </div>
-          <p className="font-bold text-lg my-8">Billing address</p>
+          <p className="font-bold text-lg mt-8">Billing address</p>
           <div className="my-2">
             <label className="label">
               <span className="label-text">Country/Region</span>

@@ -9,12 +9,22 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import Checkout from "./pages/Checkout";
+import Payment from "./pages/Payment";
 
 function App() {
   const [deals, setDeals] = useState(data.deals);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [billingInfo, setBillingInfo] = useState({
+    email: "",
+    country: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    phone: "",
+  });
   const user = "pete";
 
   return (
@@ -45,7 +55,20 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/account" element={<Account />} />
-            <Route path="/checkout" element={<Checkout cart={cart} />} />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  cart={cart}
+                  billingInfo={billingInfo}
+                  setBillingInfo={setBillingInfo}
+                />
+              }
+            />
+            <Route
+              path="/payment"
+              element={<Payment billingInfo={billingInfo} />}
+            />
           </Routes>
         </div>
         <Footer />
