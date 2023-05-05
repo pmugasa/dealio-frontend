@@ -27,7 +27,7 @@ function App() {
     phone: "",
   });
   const user = "pete";
-  const baseUrl = "http://localhost:3001/api/deals";
+  const baseUrl = "/api/deals";
   useEffect(() => {
     async function fetchData() {
       try {
