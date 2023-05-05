@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import DealDetail from "./pages/DealDetail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import data from "./data/db.json";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
@@ -13,7 +12,7 @@ import Payment from "./pages/Payment";
 import axios from "axios";
 
 function App() {
-  const [deals, setDeals] = useState(data.deals);
+  const [deals, setDeals] = useState([]);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +31,7 @@ function App() {
     async function fetchData() {
       try {
         const data = await axios.get(baseUrl);
-        console.log("DATA", data);
+        setDeals(data.data);
       } catch (err) {
         console.log(err);
       }
