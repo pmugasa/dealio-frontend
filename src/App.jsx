@@ -1,7 +1,7 @@
 import Home from "./pages/Home";
 import DealDetail from "./pages/DealDetail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "./data/db.json";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import Checkout from "./pages/Checkout";
 import Payment from "./pages/Payment";
+import axios from "axios";
 
 function App() {
   const [deals, setDeals] = useState(data.deals);
@@ -26,6 +27,18 @@ function App() {
     phone: "",
   });
   const user = "pete";
+  const baseUrl = "http://localhost:3001/api/deals";
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await axios.get(baseUrl);
+        console.log("DATA", data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    fetchData();
+  }, []);
 
   //calculating subtotal
   function calculateTotal(array) {

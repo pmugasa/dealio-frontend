@@ -64,7 +64,7 @@ function Login() {
                     <span className="mr-4">
                       <ion-icon name="logo-google"></ion-icon>
                     </span>
-                    Login with Google
+                    Sign in with Google
                   </button>
                   <label className="label">
                     <Link

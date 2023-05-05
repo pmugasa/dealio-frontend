@@ -73,7 +73,7 @@ function Signup() {
                     <span className="mr-4">
                       <ion-icon name="logo-google"></ion-icon>
                     </span>{" "}
-                    Register with Google
+                    Signup with Google
                   </button>
                   <label className="label">
                     <Link
@@ -81,7 +81,7 @@ function Signup() {
                       className="label-text-alt link link-hover"
                     >
                       Already have an account?{" "}
-                      <span className="text-primary">Login</span>
+                      <span className="text-primary">Sign in</span>
                     </Link>
                   </label>
                 </div>
