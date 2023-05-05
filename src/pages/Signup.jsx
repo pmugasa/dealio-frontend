@@ -24,7 +24,7 @@ function Signup() {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-lg mt-8 bg-base-100">
               <div className="card-body ">
                 <div className="form-control">
-                  <label className="label">
+                  {/*  <label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
@@ -62,27 +62,28 @@ function Signup() {
                         Forgot password?
                       </a>
                     </label>
-                    <label className="label">
-                      <Link
-                        to="/login"
-                        className="label-text-alt link link-hover"
-                      >
-                        Already have an account?{" "}
-                        <span className="text-primary">Login</span>
-                      </Link>
-                    </label>
+                  
                   </div>
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Register</button>
-                  <div className="divider">OR</div>
+                  <div className="divider">OR</div>*/}
 
-                  <button className="btn btn-primary btn-outline my-4">
+                  <button className="btn btn-primary font-bold hover:text-white my-4">
                     <span className="mr-4">
                       <ion-icon name="logo-google"></ion-icon>
                     </span>{" "}
                     Register with Google
                   </button>
+                  <label className="label">
+                    <Link
+                      to="/login"
+                      className="label-text-alt link link-hover"
+                    >
+                      Already have an account?{" "}
+                      <span className="text-primary">Login</span>
+                    </Link>
+                  </label>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Payment({ billingInfo }) {
+function Payment({ billingInfo, calculateTotal, cart }) {
   const [isChecked, setIsChecked] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState();
 
@@ -11,10 +11,10 @@ function Payment({ billingInfo }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(paymentMethod, billingInfo);
+    console.log(calculateTotal(cart));
   }
   return (
-    <main className="mt-8  p-4 max-w-screen-lg  mx-auto md:max-w-screen-md  md:mx-auto sm:max-w-screen-sm sm:mx-auto text-sm ">
+    <main className="mt-8  p-4 max-w-screen-lg  mx-auto md:max-w-screen-md  md:mx-auto  text-sm ">
       <div className="border border-gray-300 shadow-sm w-full p-4">
         <div className="flex flex-col">
           <div className="flex">
@@ -60,19 +60,7 @@ function Payment({ billingInfo }) {
             </label>
           </div>
           <div className="divider"></div>
-          <div className="flex space-x-4 my-4">
-            <input
-              type="radio"
-              name="radio-2"
-              value="paynow"
-              className="radio radio-primary radio-sm"
-              onChange={handleChange}
-              checked={paymentMethod === "paynow"}
-            />
-            <label htmlFor="paynow" className="font-bold">
-              Paynow
-            </label>
-          </div>
+
           <button
             disabled={isChecked === false ? true : false}
             onClick={() => console.log("clicked")}

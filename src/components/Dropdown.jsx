@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-function Dropdown({ handleContainerLeave, cart, setCart }) {
+function Dropdown({ handleContainerLeave, cart, setCart, calculateTotal }) {
   function removeItem(id) {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
@@ -25,13 +25,6 @@ function Dropdown({ handleContainerLeave, cart, setCart }) {
       }
     });
     setCart(updatedCart);
-  }
-
-  //calculating subtotal
-  function calculateTotal(array) {
-    return array.reduce((accumulator, item) => {
-      return accumulator + item.price * item.quantity;
-    }, 0);
   }
 
   const subTotal = calculateTotal(cart);

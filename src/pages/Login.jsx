@@ -23,12 +23,13 @@ function Login() {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-lg mt-8 bg-base-100">
               <div className="card-body ">
                 <div className="form-control">
-                  <label className="label">
+                  {/*<label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
                     type="email"
                     placeholder="email"
+                    required
                     className="input input-bordered"
                     value={email}
                   />
@@ -40,6 +41,7 @@ function Login() {
                   </label>
                   <input
                     type="password"
+                    required
                     placeholder="password"
                     className="input input-bordered"
                     value={password}
@@ -51,27 +53,28 @@ function Login() {
                         Forgot password?
                       </a>
                     </label>
-                    <label className="label">
-                      <Link
-                        to="/signup"
-                        className="label-text-alt link link-hover"
-                      >
-                        Don't have an account?{" "}
-                        <span className="text-primary">Signup</span>
-                      </Link>
-                    </label>
+                  
                   </div>
                 </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Login</button>
-                  <div className="divider">OR</div>
+                  <div className="divider">OR</div>*/}
 
-                  <button className="btn btn-primary btn-outline my-4">
+                  <button className="btn btn-primary font-bold hover:text-white  my-4">
                     <span className="mr-4">
                       <ion-icon name="logo-google"></ion-icon>
                     </span>
                     Login with Google
                   </button>
+                  <label className="label">
+                    <Link
+                      to="/signup"
+                      className="label-text-alt link link-hover"
+                    >
+                      Don't have an account?{" "}
+                      <span className="text-primary">Signup</span>
+                    </Link>
+                  </label>
                 </div>
               </div>
             </div>

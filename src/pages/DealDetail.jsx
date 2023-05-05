@@ -1,16 +1,10 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
-  const [disabled, setDisabled] = useState(false);
+function DealDetail({ deals, cart, setCart }) {
   const id = useParams().id;
   const deal = deals.find((deal) => deal.id === id);
   const navigate = useNavigate();
-
-  function addToWishList() {
-    setWishlist((prevWish) => [...prevWish, deal]);
-    setDisabled(true);
-  }
 
   //add to cart
   function addToCart(id) {
@@ -31,7 +25,7 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
 
   return (
     <>
-      <main className="mt-6 md:max-w-screen-lg md:mx-auto  md:h-screen ">
+      <main className="mt-6 md:max-w-screen-lg md:mx-auto   ">
         <div className="my-4">
           <button
             className="px-6 py-2 bg-primary text-white rounded-md mx-6"
@@ -51,7 +45,7 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
             <p className="text-gray-500 my-4">{deal.terms}</p>
           </div>
 
-          <div className="ml-auto md:p-40 md:mb-28">
+          <div className="ml-auto md:p-10 md:mb-28">
             <p className="font-semibold  ">
               <ion-icon name="restaurant-outline" size="small"></ion-icon>
               <span className="ml-2">{deal.restaurantName}</span>
@@ -71,22 +65,13 @@ function DealDetail({ deals, cart, setCart, wishlist, setWishlist }) {
             </div>
             <div className="flex space-x-4 my-4 ">
               <button
-                className="btn btn-primary gap-2  "
+                className="btn btn-md btn-primary gap-2 w-full hover:text-white font-semibold "
                 onClick={() => {
                   addToCart(deal.id);
                 }}
               >
                 Add to cart
                 <ion-icon name="cart-outline"></ion-icon>
-              </button>
-
-              <button
-                className="btn btn-outline btn-primary gap-2 "
-                disabled={disabled}
-                onClick={() => addToWishList(deal.id)}
-              >
-                Add to wishlist
-                <ion-icon name="heart-outline"></ion-icon>
               </button>
             </div>
           </div>

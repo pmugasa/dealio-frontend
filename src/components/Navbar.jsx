@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 
-function Navbar({ cart, setCart }) {
+function Navbar({ cart, setCart, calculateTotal }) {
   const [showCart, setShowCart] = useState(false);
 
   const handleBtnHover = () => {
@@ -44,6 +44,7 @@ function Navbar({ cart, setCart }) {
                 handleContainerLeave={handleContainerLeave}
                 cart={cart}
                 setCart={setCart}
+                calculateTotal={calculateTotal}
               />
             ) : null}
 
