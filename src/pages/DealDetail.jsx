@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 function DealDetail({ deals, cart, setCart }) {
-  const id = useParams().id;
+  const id = Number(useParams().id);
   const deal = deals.find((deal) => deal.id === id);
   const navigate = useNavigate();
 
